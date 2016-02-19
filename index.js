@@ -18,7 +18,7 @@ function render(source, config) {
   config = config || {};
   config.raml2HtmlVersion = pjson.version;
 
-  return raml2obj.parse(source).then(function(ramlObj) {
+  return raml2obj.parse(source, { validate : false }).then(function(ramlObj) {
     ramlObj.config = config;
 
     if (config.processRamlObj) {
